@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import _variableOfFunction_ from _pathToFunction_
+import Header from './my_files/Header';
+import Technologies from './my_files/Technologies'
+import Footer from './my_files/Footer'
 
-function App() {
+const App = () => {
+  // This is not HTML, this is JSX
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Technologies/>
+      <Footer/>
     </div>
   );
 }
