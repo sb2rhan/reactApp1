@@ -1,0 +1,11 @@
+.post {
+    background-color: #cfcfee;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+.post img {
+    width: 70px;
+    height: 70px;
+    border-radius: 30%;
+}

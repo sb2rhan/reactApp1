@@ -1,14 +1,16 @@
 .navbar {
-    background-color: #cececc;
+    background-color: #ececea;
     padding: 30px;
     grid-area: navbar;
+    font-size: 26px;
 }
 
 .item a {
-    text-decoration: none;
     color: #2e2e3d;
+    text-decoration: none;
 }
 
-.item.active {
-    color: #cccddd;
+.item.active a {
+    color: #424992;
+    text-decoration: underline;
 }

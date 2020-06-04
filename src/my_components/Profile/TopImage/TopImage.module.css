@@ -1,0 +1,8 @@
+.topImage {
+    text-align: center;
+}
+
+.topImage img {
+    height: 400px;
+    width: max-content;
+}

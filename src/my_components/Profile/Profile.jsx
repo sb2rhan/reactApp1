@@ -1,23 +1,14 @@
 import React from 'react';
-import s from './Profile.module.css'
+import s from './Profile.module.css';
+import Posts from './Posts/Posts';
+import TopImage from './TopImage/TopImage'
 
 const Profile = () => {
     return (
         <div className={s.profile}>
-            <div>Background image</div>
+            <TopImage/>
             <div>ava + description</div>
-            <div>
-                My posts
-                <div>
-                    New posts
-                </div>
-                <div>
-                    1 post
-                </div>
-                <div>
-                    2 post
-                </div>
-            </div>
+            <Posts/>
         </div>
     );
 }
