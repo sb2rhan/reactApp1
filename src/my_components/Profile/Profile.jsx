@@ -1,8 +1,9 @@
 import React from 'react';
+import s from './Profile.module.css'
 
 const Profile = () => {
     return (
-        <div className="Profile">
+        <div className={s.profile}>
             <div>Background image</div>
             <div>ava + description</div>
             <div>
