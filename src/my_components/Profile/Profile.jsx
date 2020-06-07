@@ -5,7 +5,7 @@ import TopImage from './TopImage/TopImage'
 
 const Profile = () => {
     return (
-        <div className={s.profile}>
+        <div>
             <TopImage/>
             <div>ava + description</div>
             <Posts/>

@@ -4,7 +4,13 @@
     grid-gap: 10px;
     grid-template-areas:
     'header header header header'
-    'navbar profile profile profile'
+    'navbar content content content'
     'footer footer footer footer';
     grid-template-columns: 250px auto;
+}
+
+.content {
+    grid-area: content;
+    background-color: #eeeeed;
+    padding: 20px;
 }
