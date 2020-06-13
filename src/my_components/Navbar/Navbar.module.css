@@ -10,7 +10,10 @@
     text-decoration: none;
 }
 
-.item.active a {
-    color: #424992;
+.item a:hover {
     text-decoration: underline;
+}
+
+.item .activeLink {
+    color: #53ac82;
 }
