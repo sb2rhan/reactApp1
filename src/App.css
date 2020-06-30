@@ -11,6 +11,6 @@
 
 .content {
     grid-area: content;
-    background-color: #eeeeed;
-    padding: 20px;
+    padding: 10px;
+    background-color: #fcfcfc;
 }

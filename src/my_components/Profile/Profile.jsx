@@ -1,13 +1,12 @@
 import React from 'react';
 import s from './Profile.module.css';
 import Posts from './Posts/Posts';
-import TopImage from './TopImage/TopImage'
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return (
-        <div>
-            <TopImage/>
-            <div>ava + description</div>
+        <div className={s.profile}>
+            <ProfileInfo/>
             <Posts/>
         </div>
     );
