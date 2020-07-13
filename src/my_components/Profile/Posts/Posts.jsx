@@ -1,8 +1,11 @@
 import React from 'react';
 import s from './Posts.module.css';
-import Post from './Post/Post'
+import Post from './Post/Post.jsx'
 
-const Posts = () => {
+const Posts = (props) => {
+
+    let messagesElements = props.postMessages
+        .map( m => <Post message={m.message} likes={m.likesCount}/> )
     return (
         <div className={s.posts}>
             <h2>My Posts</h2>
@@ -14,10 +17,9 @@ const Posts = () => {
                     <button>Add post</button>
                 </div>
             </div>
-            <Post message="Hi, how are you guys?" likes="23"/>
-            <Post message="The guy who wrote this is my brother" likes="34"/>
-            <Post message="Hello, World!" likes="2"/>
-            <Post message="Welcome to your first post." likes="10"/>
+            <div>
+              {messagesElements}
+            </div>
         </div>
     );
 }

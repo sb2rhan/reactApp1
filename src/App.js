@@ -11,7 +11,7 @@ import Music from './my_components/Music/Music';
 import Settings from './my_components/Settings/Settings'
 import { BrowserRouter, Route } from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
   // This is not HTML, this is JSX
   return (
     <BrowserRouter>
@@ -19,11 +19,17 @@ const App = () => {
         <Header />
         <Navbar />
         <div className="content">
-          <Route path='/profile' component={Profile} />
+          {/*<Route path='/profile' component={Profile} />
           <Route path='/dialogs' component={Dialogs} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
-          <Route path='/settings' component={Settings} />
+          <Route path='/settings' component={Settings} />*/}
+
+          <Route path='/profile' render={ () => <Profile posts={props.profilePosts}/> } />
+          <Route path='/dialogs' render={ () => <Dialogs dialogs={props.dialogs} messages={props.dialogMessages}/> } />
+          <Route path='/news' render={ () => <News/> } />
+          <Route path='/music' render={ () => <Music/> } />
+          <Route path='/settings' render={ () => <Settings/> } />
         </div>
         <Footer />
       </div>
