@@ -5,10 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 //importing state(data)
 import state from './redux/state';
+import { addPost } from './redux/state';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App profileState={state.profilePageState} dialogsState={state.dialogsPageState}/>
+    <App profileState={state.profilePageState} dialogsState={state.dialogsPageState} addPost={addPost}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -16,4 +17,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
