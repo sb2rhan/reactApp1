@@ -1,18 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 //importing state(data)
 import state from './redux/state';
-import { addPost } from './redux/state';
+import { rerenderEntireRoot } from './render';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App profileState={state.profilePageState} dialogsState={state.dialogsPageState} addPost={addPost}/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+rerenderEntireRoot(state);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
