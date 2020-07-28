@@ -7,7 +7,8 @@ let state = {
       { id: 2, message: "The guy who wrote this is my brother", likesCount: 10 },
       { id: 3, message: "Hello, World!", likesCount: 3 },
       { id: 4, message: "Welcome to your first post.", likesCount: 12 }
-    ]
+    ],
+    tmpNewPostText: ''
   },
   dialogsPageState: {
     dialogs: [
@@ -25,13 +26,19 @@ let state = {
   }
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePageState.tmpNewPostText,
     likesCount: 0
   };
   state.profilePageState.posts.push(newPost);
+  state.profilePageState.tmpNewPostText = '';
+  rerenderEntireRoot(state);
+}
+
+export let updateTmpPostText = (inputValue) => {
+  state.profilePageState.tmpNewPostText = inputValue;
   rerenderEntireRoot(state);
 }
 
