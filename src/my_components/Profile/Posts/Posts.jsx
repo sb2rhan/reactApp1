@@ -11,14 +11,15 @@ const Posts = (props) => {
     let newPostText = React.createRef();
 
     let onAddPost = () => {
-        props.addPost();
+        props.dispatch({ type: 'ADD-POST' });
     }
 
     let onChangeText = () => {
         let text = newPostText.current.value;
-        props.updateTmpPostText(text);
+        let action = { type: 'UPDATE-TMPPOST-TEXT', inputValue: text };
+        props.dispatch(action);
     }
-    
+
     return (
         <div className={s.posts}>
             <h2>My Posts</h2>

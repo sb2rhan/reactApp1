@@ -24,12 +24,9 @@ let store = {
       ]
     }
   },
-  getState() {
-    return this._state;
-  },
   _callObserver() {
   }, // will hold observer function from index.js
-  addPost() {
+  _addPost() {
     let newPost = {
       id: 5,
       message: this._state.profilePageState.tmpNewPostText,
@@ -39,12 +36,25 @@ let store = {
     this._state.profilePageState.tmpNewPostText = '';
     this._callObserver(this);
   },
-  updateTmpPostText(inputValue) {
+  _updateTmpPostText(inputValue) {
     this._state.profilePageState.tmpNewPostText = inputValue;
     this._callObserver(this);
   },
+
+  getState() {
+    return this._state;
+  },
   subscribeToIndexFunction(observerFromIndex) {
     this._callObserver = observerFromIndex; // observer pattern similar to publisher-subscriber
+  },
+
+  dispatch(action) { // accepts an action that has been send from component
+    // action is object { type: 'NAMEOFFUNCTION' }
+    if (action.type === 'ADD-POST') {
+      this._addPost();
+    } else if (action.type === 'UPDATE-TMPPOST-TEXT') {
+      this._updateTmpPostText(action.inputValue);
+    }
   }
 };
 

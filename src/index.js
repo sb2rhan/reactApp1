@@ -8,9 +8,8 @@ import App from './App';
 let rerenderEntireRoot = (store) => {
     ReactDOM.render(
         <React.StrictMode>
-          <App state={ store.getState() }
-           addPost={ store.addPost.bind(store) } updateTmpPostText={ store.updateTmpPostText.bind(store) }/>
-           {/*bind means to save 'this' as pointer to store object, not callback object */}
+          <App state={ store.getState() } dispatch={ store.dispatch.bind(store) }/>
+         {/*bind means to save 'this' as pointer to store object, not to callback object */}
         </React.StrictMode>,
         document.getElementById('root')
       );
