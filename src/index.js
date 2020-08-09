@@ -17,6 +17,7 @@ let rerenderEntireRoot = (store) => {
 
 rerenderEntireRoot(store);
 
+// after each alter in state.js, it will rerender the whole root of components
 store.subscribeToIndexFunction(rerenderEntireRoot);
 
 // If you want your app to work offline and load faster, you can change
