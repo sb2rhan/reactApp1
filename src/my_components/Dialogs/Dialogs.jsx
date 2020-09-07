@@ -3,25 +3,25 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem.jsx';
 import Message from './Message/Message.jsx';
 // for creating action object
-import { addMessageActionCreator, updateTmpMessageTextActionCreator } from './../../redux/state.js';
+import { addMessageActionCreator, updateTmpMessageTextActionCreator } from './../../redux/dialogsPageReducer';
 
 const Dialogs = (props) => {
 
     let dialogsElements = props.dialogsState.dialogs
-        .map(d => <DialogItem name={d.name} id={d.id}/>);
+        .map(d => <DialogItem name={d.name} id={d.id} />);
     let messagesElements = props.dialogsState.messages
-        .map(m => <Message message={m.message} id={m.id}/>);
+        .map(m => <Message message={m.message} id={m.id} />);
 
     //let newMessageText = React.createRef();
 
     let onChangeMessageText = (e) => {
-      //let text = newMessageText.current.value;
-      // this is more proper way than using references
-      let text = e.target.value;
-      props.dispatch(updateTmpMessageTextActionCreator(text));
+        //let text = newMessageText.current.value;
+        // this is more proper way than using references
+        let text = e.target.value;
+        props.dispatch(updateTmpMessageTextActionCreator(text));
     }
     let onSendMessage = () => {
-      props.dispatch(addMessageActionCreator());
+        props.dispatch(addMessageActionCreator());
     }
 
     return (
@@ -33,14 +33,14 @@ const Dialogs = (props) => {
                 <div>{messagesElements}</div>
                 <div className="newMessage">
                     <div>
-                        <textarea onChange={ onChangeMessageText } value={props.dialogsState.tmpNewMessageText}/>
+                        <textarea onChange={onChangeMessageText} value={props.dialogsState.tmpNewMessageText} />
                     </div>
                     <div>
-                        <button onClick={ onSendMessage }>Send</button>
+                        <button onClick={onSendMessage}>Send</button>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     );
 }

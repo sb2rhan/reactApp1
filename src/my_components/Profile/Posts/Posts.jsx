@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './Posts.module.css';
 import Post from './Post/Post.jsx';
-import { addPostActionCreator, updateTmpTextActionCreator } from './../../../redux/state.js';
+import { addPostActionCreator, updateTmpTextActionCreator } from './../../../redux/profilePageReducer.js';
 
 const Posts = (props) => {
 
     let messagesElements = props.posts
-        .map( m => <Post message={ m.message } likes={ m.likesCount }/> );
+        .map(m => <Post message={m.message} likes={m.likesCount} />);
 
     // creating reference to textarea element
     let newPostText = React.createRef();
@@ -26,15 +26,15 @@ const Posts = (props) => {
             <h2>My Posts</h2>
             <div className="newPost">
                 <div>
-                    <textarea ref={ newPostText } onChange={ onChangeText }
-                     value={props.tmpPostText}/>
+                    <textarea ref={newPostText} onChange={onChangeText}
+                        value={props.tmpPostText} />
                 </div>
                 <div>
-                    <button onClick={ onAddPost }>Add post</button>
+                    <button onClick={onAddPost}>Add post</button>
                 </div>
             </div>
             <div>
-              {messagesElements}
+                {messagesElements}
             </div>
         </div>
     );
