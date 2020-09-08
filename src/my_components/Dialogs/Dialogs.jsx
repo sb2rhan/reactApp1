@@ -2,8 +2,6 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem.jsx';
 import Message from './Message/Message.jsx';
-// for creating action object
-import { addMessageActionCreator, updateTmpMessageTextActionCreator } from './../../redux/dialogsPageReducer';
 
 const Dialogs = (props) => {
 
@@ -18,10 +16,11 @@ const Dialogs = (props) => {
         //let text = newMessageText.current.value;
         // this is more proper way than using references
         let text = e.target.value;
-        props.dispatch(updateTmpMessageTextActionCreator(text));
+        props.changeMessageText(text);
+        
     }
     let onSendMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.sendMessage();
     }
 
     return (

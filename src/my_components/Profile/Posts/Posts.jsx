@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './Posts.module.css';
 import Post from './Post/Post.jsx';
-import { addPostActionCreator, updateTmpTextActionCreator } from './../../../redux/profilePageReducer.js';
 
 const Posts = (props) => {
 
@@ -12,13 +11,12 @@ const Posts = (props) => {
     let newPostText = React.createRef();
 
     let onAddPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
 
     let onChangeText = () => {
         let text = newPostText.current.value;
-        let action = updateTmpTextActionCreator(text);
-        props.dispatch(action);
+        props.changeText(text);
     }
 
     return (
