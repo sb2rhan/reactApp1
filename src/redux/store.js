@@ -34,7 +34,7 @@ let store = {
     getState() {
         return this._state;
     },
-    subscribeToIndexFunction(observerFromIndex) {
+    subscribe(observerFromIndex) {
         this._callObserver = observerFromIndex; // observer pattern similar to publisher-subscriber
     },
 

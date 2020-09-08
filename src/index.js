@@ -1,11 +1,13 @@
 import * as serviceWorker from './serviceWorker';
-import store from './redux/state';
+import store from './redux/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+
 let rerenderEntireRoot = (store) => {
+    debugger;
     ReactDOM.render(
         <React.StrictMode>
             <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
@@ -18,7 +20,9 @@ let rerenderEntireRoot = (store) => {
 rerenderEntireRoot(store);
 
 // after each alter in state.js, it will rerender the whole root of components
-store.subscribeToIndexFunction(rerenderEntireRoot);
+store.subscribe(() => {
+    rerenderEntireRoot(store);
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
