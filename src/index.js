@@ -7,7 +7,6 @@ import App from './App';
 
 
 let rerenderEntireRoot = (store) => {
-    debugger;
     ReactDOM.render(
         <React.StrictMode>
             <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
