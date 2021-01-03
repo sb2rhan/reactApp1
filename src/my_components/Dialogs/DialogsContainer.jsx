@@ -12,7 +12,8 @@ const DialogsContainer = (props) => {
         props.dispatch(addMessageActionCreator());
     }
 
-    return ( <Dialogs changeMessageText={ changeMessageText } sendMessage={ sendMessage } dialogsState={ props.dialogsState }/> );
+    return ( <Dialogs changeMessageText={ changeMessageText }
+                sendMessage={ sendMessage } dialogsState={ props.dialogsState }/> );
 }
 
 export default DialogsContainer;

@@ -14,6 +14,7 @@ const Dialogs = (props) => {
 
     let onChangeMessageText = (e) => {
         //let text = newMessageText.current.value;
+        
         // this is more proper way than using references
         let text = e.target.value;
         props.changeMessageText(text);
