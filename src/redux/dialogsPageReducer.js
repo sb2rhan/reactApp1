@@ -6,7 +6,7 @@ let initialState = {
     dialogs: [
         { id: 1, name: "Saka" },
         { id: 2, name: "Olzhas" },
-        { id: 3, name: "Zhambyl" },
+        { id: 3, name: "Shon" },
         { id: 4, name: "Beka" },
         { id: 5, name: "Nura" }
     ],

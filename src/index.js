@@ -4,13 +4,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import StoreContext from './storeContext';
 
 
 let rerenderEntireRoot = (store) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
-            {/*bind means to save 'this' as pointer to store object, not to callback object */}
+            {/* providing global context to all child components */}
+            <StoreContext.Provider value={store}>
+                <App />
+            </StoreContext.Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );

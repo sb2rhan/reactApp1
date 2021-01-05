@@ -5,7 +5,6 @@ import Header from './my_components/Header/Header';
 import Navbar from './my_components/Navbar/Navbar';
 import Profile from './my_components/Profile/Profile';
 import Footer from './my_components/Footer/Footer';
-import Dialogs from './my_components/Dialogs/Dialogs';
 import News from './my_components/News/News';
 import Music from './my_components/Music/Music';
 import Settings from './my_components/Settings/Settings'
@@ -28,9 +27,9 @@ const App = (props) => {
                     <Route path='/settings' component={Settings} />*/}
 
                     <Route path='/profile'
-                        render={() => <Profile profileState={props.state.profilePageState} dispatch={props.dispatch} />} />
+                        render={() => <Profile />} />
                     <Route path='/dialogs'
-                        render={() => <DialogsContainer dialogsState={props.state.dialogsPageState} dispatch={props.dispatch} />} />
+                        render={() => <DialogsContainer />} />
                     <Route path='/news' render={() => <News />} />
                     <Route path='/music' render={() => <Music />} />
                     <Route path='/settings' render={() => <Settings />} />
